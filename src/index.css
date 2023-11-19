@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "danaLight";
+    src: url(/fonts/dana/DanaFaNum-Light.woff2) format("woff2");
+    font-style: swap;
+  }
+  @font-face {
+    font-family: "dana";
+    src: url(/fonts/dana/DanaFaNum-Regular.woff2) format("woff2");
+    font-style: swap;
+  }
+  @font-face {
+    font-family: "danaMedium";
+    src: url(/fonts/dana/DanaFaNum-Medium.woff2) format("woff2");
+    font-style: swap;
+  }
+  @font-face {
+    font-family: "danaBold";
+    src: url(/fonts/dana/DanaFaNum-Bold.woff2) format("woff2");
+    font-style: swap;
+  }
+  @font-face {
+    font-family: "danaDemiBold";
+    src: url(/fonts/dana/DanaFaNum-DemiBold.woff2) format("woff2");
+    font-style: swap;
+  }
+  @font-face {
+    font-family: "morabbaMedium";
+    src: url(/fonts/morabba/Morabba-Medium.woff2) format("woff2");
+    font-style: swap;
+  }
+  @font-face {
+    font-family: "morabbaBold";
+    src: url(/fonts/morabba/Morabba-Bold.woff2) format("woff2");
+    font-style: swap;
+  }
+}
+@layer components {
+  .sub-title {
+    @apply hidden absolute mr-0 top-7 min-w-[256px] py-5 px-6 child:my-4 bg-white text-zinc-700 group-hover:inline-block child-hover:text-green-500 rounded-2xl shadow-xl transition-all delay-75;
+  }
+  .submenu-marker::beclassname=e {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 4px;
+    top: 10px;
+    right: -15px;
+    background-color: #22c55e;
+    border-radius: 50%;
+  }
+  .price-line::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: 35%;
+    right: -5%;
+    height: 1px;
+    width: 100%;
+    background-color: #64748b;
+    border-radius: 100%;
+  }
+  .text-direction {
+    direction: ltr;
+    text-align: left;
+  }
+  .selected {
+    @apply bg-gray-100 dark:bg-black-300 dark:text-white text-zinc-700;
+  }
+  .text-selected {
+    @apply font-danaMedium text-zinc-950 dark:text-white;
+  }
+  .selected-checkbox {
+    @apply bg-sky-500 dark:bg-secondary-300;
+  }
+  .filter-marker::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  .filter-selected-marker::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  .submenu-hover {
+    @apply hover:submenu-marker hover:text-green-500 hover:mr-4 transition-all duration-200;
+  }
+  .animation-open-menu {
+    animation: openMenuAnim 0.1s linear 1 reverse backwards;
+  }
+  .animation-close-menu {
+    animation: closenMenuAnim 0.1s linear 1 reverse backwards;
+  }
+  @keyframes openMenuAnim {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+  @keyframes closenMenuAnim {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+  }
+
+  .sort-box-animation {
+    animation: sort-animation 0.3s forwards;
+  }
+  @keyframes sort-animation {
+    0% {
+      opacity: 0.1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  .breadcrumb-arrow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: -5px;
+    height: 70%;
+    width: 5px;
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    transform: rotate(44deg);
+  }
+  .breadcrumb-arrow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 70%;
+    top: 19px;
+    width: 5px;
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    transform: rotate(-44deg);
+  }
+  .progress-course::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    right: 66%;
+    width: 34%;
+    height: 8px;
+    background-color: #0ea5e9;
+    border-radius: 12px;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}
+body {
+  font-family: "dana";
+  background-color: #f3f4f6;
+  @apply dark:bg-black-500;
+}
